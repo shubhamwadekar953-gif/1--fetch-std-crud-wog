@@ -1,0 +1,250 @@
+*{
+    padding : 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.spinner{
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root{
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #0f172a;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --success: #10b981;
+    --danger: #ef4444;
+    --radius: 14px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background: var(--bg);
+    color: var(--text-main);
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    top: -20%;
+    left: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle at center, rgba(99,102,241,0.15) 0%, transparent 70%);
+    z-index: -1;
+}
+body::after{
+    content: "";
+    position: fixed;
+    bottom: -20%;
+    right: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle at center, rgba(16,185,129,0.12) 0%, transparent 70%);
+    z-index: -1;
+}
+
+/* Header */
+h1.bg-dark{
+    background: var(--secondary) !important;
+    font-weight: 800 !important;
+    font-size: 22px !important;
+    letter-spacing: 1.5px !important;
+    padding: 18px !important;
+    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Form Card  */
+#stdForm .card{
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    box-shadow: var(--shadow-lg) !important;
+    overflow: hidden;
+    margin-top: 30px !important;
+    animation: fadeInUp 0.6s ease;
+}
+
+#stdForm .card h3.bg-dark{
+    background: transparent !important;
+    color: var(--text-main) !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    text-align: left !important;
+    padding: 24px 24px 0 24px !important;
+    border-bottom: none !important;
+}
+
+#stdForm .card-body{
+    padding: 24px !important;
+}
+
+.form-group label{
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.form-control{
+    height: 44px !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    background: #f8fafc !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    padding: 0 14px !important;
+    transition: all 0.2s ease !important;
+}
+
+.form-control:focus{
+    background: #fff !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 4px rgba(99,102,241,0.15) !important;
+    outline: none !important;
+}
+
+/* Buttons */
+#submitBtn, #updateBtn{
+    height: 42px;
+    padding: 0 24px !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease !important;
+}
+
+#submitBtn{
+    background: var(--primary) !important;
+    color: #fff !important;
+    border: none !important;
+}
+#submitBtn:hover{
+    background: var(--primary-dark) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+}
+
+#updateBtn{
+    background: var(--secondary) !important;
+    color: #fff !important;
+    border: none !important;
+}
+#updateBtn:hover{
+    transform: translateY(-1px);
+}
+
+/* Table Card */
+.card-fluid{
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.table{
+    margin: 0 !important;
+}
+
+.table thead tr th{
+    background: #f8fafc !important;
+    color: var(--text-muted) !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-bottom: 1px solid var(--border) !important;
+    border-top: none !important;
+    padding: 14px 16px !important;
+    white-space: nowrap;
+}
+
+.table tbody tr{
+    transition: all 0.15s ease;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.table tbody tr:last-child{
+    border-bottom: none;
+}
+
+.table tbody tr:hover{
+    background: #f8fafc !important;
+}
+
+.table tbody td{
+    padding: 14px 16px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: var(--text-main) !important;
+    vertical-align: middle !important;
+    border: none !important;
+}
+
+/* Edit / Delete Buttons */
+.table .btn-outline-success{
+    background: #ecfdf5 !important;
+    color: var(--success) !important;
+    border: 1px solid #a7f3d0 !important;
+    padding: 6px 14px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+}
+.table .btn-outline-success:hover{
+    background: var(--success) !important;
+    color: #fff !important;
+}
+
+.table .btn-outline-danger{
+    background: #fef2f2 !important;
+    color: var(--danger) !important;
+    border: 1px solid #fecaca !important;
+    padding: 6px 14px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+}
+.table .btn-outline-danger:hover{
+    background: var(--danger) !important;
+    color: #fff !important;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px){
+    h1.bg-dark{ font-size: 16px !important; }
+    .card-fluid{ margin: 15px !important; overflow-x: auto; }
+}
